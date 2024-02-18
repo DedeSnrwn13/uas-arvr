@@ -15,7 +15,8 @@
     <a-scene>
         <a-assets>
             <a-asset-item id="cone-obj" src="/assets/gltf/entity.glb"></a-asset-item>
-            <img id="car2" src="./assets/images/car2.png" />
+            <img id="car2" src="/assets/images/car2.png" />
+            <audio id="backgroundMusic" src="/assets/audious/BluesFunandCountry.mp3" preload="auto"></audio>
         </a-assets>
 
         <!-- Environment -->
@@ -45,6 +46,7 @@
         ></a-sphere>
 
         <a-link position="0 1 -20" href="car2.html" title="Car 2" image="#car2"></a-link>
+        <a-link position="10 1 -20" href="ar.html" title="Pindah ke AR" image="#car2"></a-link>
 
         <a-entity gltf-model="#cone-obj" position="5 0 5"></a-entity>
         <a-entity gltf-model="#cone-obj" position="-5 0 5"></a-entity>
@@ -132,6 +134,8 @@
             shadow>
         </a-plane>
 
+        <a-entity id="playButton" geometry="primitive: box; width: 2; height: 1;" position="0 1 -15" material="color: green" text="value: Play Music; align: center;" event-set__1="_event: click; visible: false;" event-set__2="_event: click; visible: false;" sound="src: #backgroundMusic; on: click; autoplay: false;"></a-entity>
+
         <a-camera
             id="myCamera"
             pointer-lock-enabled="true"
@@ -139,6 +143,8 @@
         >
             <a-cursor intersection-spawn="event: click; mixin: voxel;"></a-cursor>
         </a-camera>
+
+        <a-entity sound="src: #backgroundMusic"></a-entity>
     </a-scene>
 
     <div class="controls">

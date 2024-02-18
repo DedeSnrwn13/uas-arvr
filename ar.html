@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>UAS ARVR - Dede Sunarwan 21552011318</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden">
+  <a-scene embeded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <a-assets>
+        <a-asset-item id="car" src="/assets/gltf/yellow_truck/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-marker url="/assets/images/pattern-hiro.png">
+        <a-entity gltf-model="#car"></a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
