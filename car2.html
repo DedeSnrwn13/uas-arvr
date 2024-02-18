@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>#codeacar</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <script src="/assets/js/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r134/examples/js/deprecated/Geometry.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <!-- Environment -->
+      <a-entity environment="preset:forest;"></a-entity>
+      <a-plane static-body height="1000" width="1000" position="0 -0.02 0" color="white" rotation="-90 0 0"></a-plane>
+
+
+      <!-- Car -->
+      <a-entity static-body id="car" position="0 0 0">
+        <a-box position="0 1 -1.4" color="#0761B3" height="0.75" width="2" depth="4"></a-box> <!-- Car Body -->
+        <a-box position="0 1.75 -1.15" color="#0761B3" height="0.8" width="1.6" depth="2"></a-box> <!-- Car Top -->
+
+        <a-box position="0 1.75 -1.14" color="white" height="0.6" width="1.4" depth="2.03"></a-box> <!-- Windshield -->
+        <a-box position="-0.01 1.75 -1.59" color="white" height="0.6" width="1.63" depth="1"></a-box> <!-- Front Window -->
+        <a-box position="-0.01 1.75 -0.55" color="white" height="0.6" width="1.63" depth="0.5"></a-box> <!-- Back Window -->
+
+        <a-cylinder height="0.25" radius="0.4" position="1 0.6 0" color="black" rotation="0 0 90"></a-cylinder> <!-- Back Right Tire -->
+        <a-cylinder height="0.25" radius="0.4" position="-1 0.6 0" color="black" rotation="0 0 90"></a-cylinder> <!-- Back Left Tire -->
+        <a-cylinder height="0.25" radius="0.4" position="1 0.6 -2.4" color="black" rotation="0 0 90"></a-cylinder> <!-- Front Right Tire -->
+        <a-cylinder height="0.25" radius="0.4" position="-1 0.6 -2.4" color="black" rotation="0 0 90"></a-cylinder> <!-- Front Left Tire -->
+
+        <a-cylinder height="0.1" radius="0.2" position="-0.6 1 -3.4" color="yellow" rotation="0 90 90"></a-cylinder> <!-- Front Left Headlight -->
+        <a-cylinder height="0.1" radius="0.2" position="0.6 1 -3.4" color="yellow" rotation="0 90 90"></a-cylinder> <!-- Front Right Headlight -->
+        <a-cylinder height="0.1" radius="0.2" position="-0.6 1 0.6" color="red" rotation="0 90 90"></a-cylinder> <!-- Back Left Headlight -->
+        <a-cylinder height="0.1" radius="0.2" position="0.6 1 0.6" color="red" rotation="0 90 90"></a-cylinder> <!-- Back Right Headlight -->
+      </a-entity>
+    </a-scene>
+    <!-- <script src="script.js"></script> -->
+    <script src="https://codechangers.com/steer.js"></script>
+  </body>
+</html>
