@@ -15,6 +15,7 @@
     <a-scene>
         <a-assets>
             <a-asset-item id="cone-obj" src="/assets/gltf/entity.glb"></a-asset-item>
+            <img id="car2" src="./assets/images/car2.png" />
         </a-assets>
 
         <!-- Environment -->
@@ -42,6 +43,8 @@
             position="0 0 -10"
             dynamic-body
         ></a-sphere>
+
+        <a-link position="0 1 -20" href="car2.html" title="Car 2" image="#car2"></a-link>
 
         <a-entity gltf-model="#cone-obj" position="5 0 5"></a-entity>
         <a-entity gltf-model="#cone-obj" position="-5 0 5"></a-entity>
